@@ -6,16 +6,11 @@ def maxProfit(prices: List[int]) -> int:
     profit = 0
 
     for n in prices[1:]:
-        if n > buy_price:
+        if n < buy_price:
             buy_price = n
 
-        profit = max(profit, n-buy_price)
-    return  profit
+        profit = max(profit, n - buy_price)
+    return profit
 
 
-
-print(maxProfit([1,2, 4]))
-
-
-
-
+print(maxProfit([7, 1, 5, 3, 6, 4]))
